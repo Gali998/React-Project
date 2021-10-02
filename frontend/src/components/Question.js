@@ -1,5 +1,5 @@
-import {Modal,Button} from 'react-bootstrap'
-import { useContext,useState,useEffect } from "react";
+import { Modal, Button } from 'react-bootstrap'
+import { useContext, useState, useEffect } from "react";
 import { QuestionContext } from "../contexts/QuestionContext";
 import EditQuestion from './EditQuestion';
 import Badge from './Badge';
@@ -7,16 +7,16 @@ import Badge from './Badge';
 const Question = ({ question }) => {
 
     const { deleteQuestion } = useContext(QuestionContext)
-    const [show,setShow] = useState(false);
-    const handleShow = ()=> setShow(true);
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    const questionStatus ={
+    const questionStatus = {
         "Draft": "secondary",
-        "Published": "success" 
+        "Published": "success"
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         handleClose()
     }, [question])
 
@@ -25,7 +25,7 @@ const Question = ({ question }) => {
             <td>{question.id}</td>
             <td>{question.question}</td>
             <td>{question.category}</td>
-            <td><Badge type={questionStatus[question.status]} content={question.status}/></td>
+            <td><Badge type={questionStatus[question.status]} content={question.status} /></td>
             <td>
                 <button onClick={handleShow} className="btn text-warning btn-act" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
                 <button onClick={() => deleteQuestion(question.id)} className="btn text-danger btn-act" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
@@ -37,7 +37,7 @@ const Question = ({ question }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditQuestion assignQuestion={question}/>
+                    <EditQuestion assignQuestion={question} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>Close</Button>

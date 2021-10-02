@@ -7,7 +7,7 @@ function App() {
       <div className="table-responsive">
         <div className="table-wrapper">
           <QuestionContextProvider>
-          <QuestionList />
+            <QuestionList />
           </QuestionContextProvider>
         </div>
       </div>
