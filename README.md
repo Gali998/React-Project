@@ -1,6 +1,6 @@
 # React-Project
 
-##install and configuration
+## install and configuration
 Clone git repository - git clone https://github.com/Gali998/React-Project.git
 
 After cloning the git repository.Go inside the frontend folder
